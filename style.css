@@ -29,9 +29,8 @@ body {
 }
 
 main {
-    border: 1px solid black;
     width: 400px;
-    height: 350px;
+    height: 400px;
     border-radius: 20px;
     text-align: center;
     z-index: 1;
@@ -58,4 +57,35 @@ div#circle-bottom {
     left: 650px;
     background-image: url(./images/bg-pattern-bottom.svg);
     background-repeat: no-repeat;
+}
+
+/* Header */
+section#header {
+    width: 400px;
+    height: 140px;
+}
+
+section#header > img {
+    width: 400px;
+    height: 140px;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Profile Image and infos */
+section#user-infos {
+    border: 1px solid red;
+    width: 400px;
+    height: 140px;
+    position: relative;
+    text-align: center;
+}
+
+section#user-infos div#user {
+    border: 1px solid blue;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    left: 50%;
+    bottom: 40%;
+    transform: translate(-50%);
 }
