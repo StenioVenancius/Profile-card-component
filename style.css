@@ -7,7 +7,10 @@
     --Dark-Grayish-Blue: hsl(227, 10%, 46%);
 
     /* Neutral Color */
-    --Dark-Gray: hsl(0, 0%, 59%);
+    --Dark-Gray: hsla(0, 0%, 59%, 0.26);
+
+    /* Shadow */
+    --Very-Dark-Desaturated-Blue-Shadow: hsla(229, 23%, 23%, 0.658);
 }
 
 * {
@@ -17,8 +20,7 @@
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,66 +28,119 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
     font-size: 18px;
     background-color: var(--Dark-Cyan);
+    background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 50vw bottom 50vh, left 50vw top 50vh;
 }
 
 main {
-    width: 400px;
-    height: 400px;
-    border-radius: 20px;
+    width: 350px;
+    height: 360px;
+    border-radius: 15px;
     text-align: center;
     z-index: 1;
     position: relative;
     background-color: white;
-}
-
-/* Background pattern */
-div#circle-top {
-    width: 1000px;
-    height: 1000px;
-    position: absolute;
-    bottom: 200px;
-    right: 700px;
-    background-image: url(./images/bg-pattern-top.svg);
-    background-repeat: no-repeat;
-}
-
-div#circle-bottom {
-    width: 715px;
-    height: 355px;
-    position: absolute;
-    top: 300px;
-    left: 650px;
-    background-image: url(./images/bg-pattern-bottom.svg);
-    background-repeat: no-repeat;
+    box-shadow: -5px 8px 10px 2px var(--Very-Dark-Desaturated-Blue-Shadow);
 }
 
 /* Header */
-section#header {
-    width: 400px;
+section#bg-header {
+    width: auto;
     height: 140px;
+    border-radius: 15px 15px 0 0;
+    background-image: url(./images/bg-pattern-card.svg);
 }
 
-section#header > img {
-    width: 400px;
-    height: 140px;
-    border-radius: 20px 20px 0 0;
-}
 
 /* Profile Image and infos */
 section#user-infos {
-    border: 1px solid red;
-    width: 400px;
-    height: 140px;
+    width: auto;
+    height: 35%;
     position: relative;
     text-align: center;
 }
 
 section#user-infos div#user {
-    border: 1px solid blue;
     width: 100px;
     height: 100px;
+    border-radius: 100%;
+    border: 4px solid white;
+    overflow: hidden;
+    text-align: center;
     position: relative;
     left: 50%;
-    bottom: 40%;
+    bottom: 42%;
     transform: translate(-50%);
+}
+
+section#user-infos div#infos {
+    margin-top: -10%;
+}
+
+div#infos h2 {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--Very-Dark-Desaturated-Blue);
+}
+
+div#infos h2>span, div#infos > span {
+    color: var(--Dark-Grayish-Blue);
+    font-weight: 400;
+}
+
+div#infos > span {
+    font-size: 0.8em;
+}
+
+hr {
+    width: 90%;
+    height: 2px;
+    margin: 5px auto;
+    border: none;
+    background-color: var(--Dark-Gray);
+}
+
+/* Status */
+section#stats {
+    width: auto;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+section#stats div.social{
+    text-align: center;
+}
+
+section#stats div.social h2 {
+    margin-bottom: -6px;
+    font-size: 1em;
+    color: var(--Very-Dark-Desaturated-Blue);
+}
+
+section#stats div.social span {
+    font-size: 0.5em;
+    letter-spacing: 0.2em;
+    color: var(--Dark-Grayish-Blue);
+}
+
+/* Footer */
+footer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--Very-Dark-Desaturated-Blue);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:visited, a:active {
+    color: white;
+}
+
+footer a:hover {
+    letter-spacing: 2px;
 }
